@@ -1,0 +1,5 @@
+enum ACTION_TYPES {
+	QUOTES_GETPAGE = "QUOTES_LOADMORE",
+}
+
+export default ACTION_TYPES;

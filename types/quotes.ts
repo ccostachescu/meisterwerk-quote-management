@@ -1,38 +1,46 @@
-export type CollectionCustomer = {
-	address: string,
-	city: string,
-	country: string,
-	email: string,
-	name: string,
-	phone: string
+export type Customer = {
+	address: string;
+	city: string;
+	country: string;
+	email: string;
+	name: string;
+	phone: string;
 };
 
-export type CollectionItem = {
-	price: number
-	product_name: string,
-	quantity: number
-	subtotal: number
-}
+export type Product = {
+	price: number;
+	product_name: string;
+	quantity: number;
+	subtotal: number;
+};
 
-export enum CollectionStatus {
+export enum Status {
 	ACCEPTED = "ACCEPTED",
 	REJECTED = "REJECTED",
 	EXPIRED = "EXPIRED",
-	DRAFT = "DRAFT"
+	DRAFT = "DRAFT",
 }
 
 export type Collection = {
-	collectionId: string,
-	collectionName: string,
-	created: string,
-	customer_info: CollectionCustomer,
-	description?: string,
-	id: string,
-	items: Array<CollectionItem>,
-	status: CollectionStatus,
-	subtotal: number,
-	total: number,
-	total_tax: number,
-	updated: string,
-	valid_until: string
-}
+	collectionId: string;
+	collectionName: string;
+	created: string;
+	customer_info: Customer;
+	description?: string;
+	id: string;
+	items: Array<Product>;
+	status: Status;
+	subtotal: number;
+	total: number;
+	total_tax: number;
+	updated: string;
+	valid_until: string;
+};
+
+export type Page = {
+	page: number;
+	perPage: number;
+	// totalItems: number;
+	totalPages: number;
+	items: Collection[];
+};

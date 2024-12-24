@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
 	mainContentContainer: {
 		flexGrow: 1,
 		justifyContent: "space-around",
-		gap: 32
+		gap: 32,
 	},
 
 	logoContainer: { width: "100%" },
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 		borderWidth: 1,
 		borderRadius: 12,
 		paddingHorizontal: 32,
-		paddingVertical: 16
+		paddingVertical: 16,
 	},
 	logoTextBrand: { fontSize: 32 },
 	logoTextProduct: { fontSize: 24 },
@@ -29,14 +29,14 @@ const styles = StyleSheet.create({
 	loginForm: {
 		flex: 1,
 		gap: 32,
-		justifyContent: "center"
+		justifyContent: "center",
 	},
 
 	signUpForm: {
 		width: "100%",
 		alignItems: "center",
-		gap: 8
-	}
+		gap: 8,
+	},
 });
 
 export default function Index() {
@@ -44,8 +44,8 @@ export default function Index() {
 	const keyboardHeight = useKeyboardHeight({});
 	const navigation = useNavigation();
 	const navigateToQuotesList = () => {
-		navigation.navigate("QuotesList");
-	}
+		navigation.navigate("quotes-list");
+	};
 
 	return (
 		<ScrollView
@@ -61,7 +61,15 @@ export default function Index() {
 				</View>
 			</View>
 
-			<View style={[styles.loginForm, { paddingLeft: safeAreaInsets.left + 32, paddingRight: safeAreaInsets.right + 32 }]}>
+			<View
+				style={[
+					styles.loginForm,
+					{
+						paddingLeft: safeAreaInsets.left + 32,
+						paddingRight: safeAreaInsets.right + 32,
+					},
+				]}
+			>
 				<View style={{ width: "100%", gap: 16 }}>
 					<TextInput style={theme.textInput} placeholder="Username" />
 					<TextInput style={theme.textInput} placeholder="Password" />
@@ -71,12 +79,17 @@ export default function Index() {
 				</Pressable>
 			</View>
 
-			<View style={[styles.signUpForm, {
-				paddingBottom: safeAreaInsets.bottom,
-				paddingLeft: safeAreaInsets.left + 32,
-				paddingRight: safeAreaInsets.right + 32,
-			}]}>
-				<Text>Don't have an account?</Text>
+			<View
+				style={[
+					styles.signUpForm,
+					{
+						paddingBottom: safeAreaInsets.bottom,
+						paddingLeft: safeAreaInsets.left + 32,
+						paddingRight: safeAreaInsets.right + 32,
+					},
+				]}
+			>
+				<Text>{"Don't have an account?"}</Text>
 				<Pressable style={[theme.button, { width: "100%" }]}>
 					<Text style={theme.buttonText}>SIGN UP</Text>
 				</Pressable>
